@@ -1,0 +1,212 @@
+
+
+
+/*body {*/
+
+
+/*}*/
+/*!**/
+
+/*A {*/
+/*	text-decoration: none;*/
+/*	color : #0066cc;*/
+/*}*/
+
+/*A:hover{*/
+/*	text-decoration: underline;*/
+/*	color : #ffcc00;	*/
+/*}*!*/
+
+/*.top1nav {*/
+/*	font-size: 12px;*/
+/*	font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;*/
+/*	font-weight: bold;*/
+/*	text-decoration : none;	*/
+/*	color: #ff9966;*/
+/*	line-height : 14px;*/
+/*}*/
+
+/*.top1navhi {*/
+/*	font-size: 12px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	text-decoration : none;*/
+/*	color: #660033;*/
+/*	line-height : 14px;	*/
+/*}*/
+
+/*.top2nav {*/
+/*	font-size: 12px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	text-decoration : none;	*/
+/*	color: #ff9966;*/
+/*	line-height : 14px;*/
+/*}*/
+
+/*.top2navhi {*/
+/*	font-size: 12px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	text-decoration : none;*/
+/*	color: #ffcc99;*/
+/*	line-height : 14px;	*/
+/*}*/
+
+/*.navtxt {*/
+/*	font-size: 12px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: normal;*/
+/*	text-decoration : none;*/
+/*	color: #ff6600;*/
+/*	line-height : 14px;*/
+/*	font-style : italic;*/
+/*}*/
+
+/*.btm1nav {*/
+/*	font-size: 12px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	text-decoration : none;	*/
+/*	color: #0066cc;*/
+/*	line-height : 14px;*/
+/*}*/
+
+/*.btm1navhi {*/
+/*	font-size: 12px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	text-decoration : none;*/
+/*	color: #660033;*/
+/*	line-height : 14px;	*/
+/*}*/
+
+/*.btm2nav {*/
+/*	font-size: 12px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	text-decoration : none;	*/
+/*	color: #ff9966;*/
+/*	line-height : 14px;*/
+/*}*/
+
+/*.btm2navhi {*/
+/*	font-size: 12px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	text-decoration : none;*/
+/*	color: #ffcc99;*/
+/*	line-height : 14px;	*/
+/*}*/
+
+/*.nav {*/
+/*	font-size: 12px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	text-decoration : none;	*/
+/*	color: #0066cc;*/
+/*	line-height : 14px;*/
+/*}*/
+
+/*.navnolink {*/
+/*	font-size: 12px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	text-decoration : none;	*/
+/*	line-height : 14px;*/
+/*}*/
+
+/*.bg1 {*/
+/*	background : #660033;*/
+/*}*/
+
+/*.bg2 {*/
+/*	background : #f5edc4;*/
+/*}*/
+
+/*.bg3 {*/
+/*	background : #660000;*/
+/*}*/
+
+
+/*.bg4 {*/
+/*        background : #FFFFFF;*/
+/*}*/
+
+/*.rule1 {*/
+/*	background : #edce77;*/
+/*}*/
+
+/*.title {*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-size: 14px;*/
+/*	font-style : normal;*/
+/*	font-weight: bold;*/
+/*	line-height : 16px;*/
+/*	color: #000000;*/
+/*}*/
+
+/*.header {*/
+/*	font-size: 14px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	color:#996600;*/
+/*	line-height : 16px;*/
+/*	font-style : normal;*/
+/*}*/
+
+/*.txt {*/
+/*	font-size: 13px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: normal;*/
+/*	line-height : 15px;*/
+/*}*/
+
+/*.txtind {*/
+/*	font-size: 13px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: normal;*/
+/*	line-height : 15px;*/
+/*	text-indent : 17px;*/
+/*}*/
+
+/*.txtindbold {*/
+/*	font-size: 13px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	line-height : 15px;*/
+/*	text-indent : 50px;*/
+/*}*/
+
+/*.txti {*/
+/*	font-size: 13px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: normal;*/
+/*	line-height : 15px;*/
+/*	font-style : italic;*/
+/*}*/
+
+/*.txtbold {*/
+/*	font-size: 13px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: bold;*/
+/*	line-height : 15px;*/
+/*}*/
+
+/*.footer {*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-size: 11px;*/
+/*	font-style : normal;*/
+/*	font-weight : normal;*/
+/*	line-height : 13px;*/
+/*}*/
+
+/*.inprocess {*/
+/*	font-size: 13px;*/
+/*	font-family: Helvetica, Verdana, Geneva, Arial, sans-serif;*/
+/*	font-weight: lighter;*/
+/*	line-height : 15px;*/
+/*	text-indent : 17px;*/
+/*	background-color : #D8D4D4;*/
+
+/*}*/
