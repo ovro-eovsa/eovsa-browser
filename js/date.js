@@ -6,8 +6,7 @@
         if (date.getMonth == 0) month = '01';
 
         separator = separator || "";   //Make sure the separator is not null
-        var str = year + separator + month + separator + day;
-        return str;
+        return year + separator + month + separator + day;
     };
 
 
@@ -20,12 +19,13 @@
         $('#' + elementId).trigger('changeDate', [prevDayDate]);
 
         console.log("Changed " + elementId + ".value to " + document.getElementById(elementId).value);
-        currentDate = prevDayDate;
+        // currentDate = prevDayDate;
     };
 
     window.currDayTrigger = function (elementId) {
 
         var currDayDate = new Date();
+        currDayDate.setDate(currDayDate.getDate() - 2);
         $('#' + elementId).trigger('changeDate', [currDayDate]);
         console.log("Changed " + elementId + ".value to " + document.getElementById(elementId).value);
         currentDate = currDayDate;
@@ -39,21 +39,21 @@
         $('#' + elementId).trigger('changeDate', [nextDayDate]);
 
         console.log("Changed " + elementId + ".value to " + document.getElementById(elementId).value);
-        currentDate = nextDayDate;
+        // currentDate = nextDayDate;
     };
 
     window.todayTrigger = function (elementId, currentDate) {
         var todayDate = new Date();
         $('#' + elementId).trigger('changeDate', [todayDate]);
         console.log("Changed " + elementId + ".value to " + document.getElementById(elementId).value);
-        currentDate = todayDate;
+        // currentDate = todayDate;
     };
 
     window.updateDownloadButtons = function () {
         //Update the download buttons
         //Low Resolution download buttons
         $('button.dl-img-btn-LoRes').off("click").click(function () {
-            var channelValue = $(this).parent().parent().parent().find(".channel-select").attr('chosen');
+            // var channelValue = $(this).parent().parent().parent().find(".channel-select").attr('chosen');
             var url = $(this).parent().parent().parent().find('img')[0].src.replace(/\/t/, "/l");
             // if (channelValue.startsWith('_eovsa_bd')) {
             //     var url = $(this).parent().parent().parent().find('img')[0].src.replace(/\/t/, "/l");
@@ -67,7 +67,7 @@
 
         //High Resolution download buttons
         $('button.dl-img-btn-HiRes').off("click").click(function () {
-            var channelValue = $(this).parent().parent().parent().find(".channel-select").attr('chosen');
+            // var channelValue = $(this).parent().parent().parent().find(".channel-select").attr('chosen');
             var url = $(this).parent().parent().parent().find('img')[0].src.replace(/\/t/, "/f");
             // if (channelValue.startsWith('_eovsa_bd')) {
             //     var url = $(this).parent().parent().parent().find('img')[0].src.replace(/\/t/, "/f");
@@ -89,7 +89,6 @@
             } else {
                 alert("FITS file not available for this channel.");
             }
-            ;
         });
 
     };

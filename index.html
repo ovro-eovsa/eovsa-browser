@@ -64,7 +64,7 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="status.php#">Today's Observing Status</a>
+                    <a href="http://www.ovsa.njit.edu/status.php#">Today's Observing Status</a>
                 </li>
                 <li>
                     <a href="http://www.ovsa.njit.edu/wiki/index.php/Expanded_Owens_Valley_Solar_Array" target="_blank">Documentation</a>
@@ -97,7 +97,7 @@
 			<span style="padding-left:10px; padding-right:10px" id="date_stuff">
 				<button class="btn btn-primary btn-sm" onclick="prevDayTrigger('datepicker', globalDate);">&#8592; Prev. Day</button>
 				<button class="btn btn-primary btn-sm" onclick="nextDayTrigger('datepicker', globalDate);">Next Day &#8594;</button>
-				<button class="btn btn-primary btn-sm" onclick="currDayTrigger('datepicker');">Today</button>
+				<button class="btn btn-primary btn-sm" onclick="currDayTrigger('datepicker');">Newest &#128343; </button>
 				<input style="width:90px" id="datepicker" type="text" data-date-format="yyyy-mm-dd" readonly>
 				<span class="add-on"><i class="glyphicon glyphicon-calendar"></i></span>
 			</span>
@@ -119,14 +119,14 @@
                     this date.)</h3>
                 <img class="img-responsive center-block" id="eovsaDySpec1minRes" src="img/loading_w.gif"
                      onerror="$('#eovsaDySpec1minRes').hide();$('#eovsaDySpec1minResLoadError').show();"
-                     onload="$('#eovsaDySpec1minRes').show();;$('#eovsaDySpec1minResLoadError').hide();">
+                     onload="$('#eovsaDySpec1minRes').show();$('#eovsaDySpec1minResLoadError').hide();">
             </div>
             <div class="col-xs-12 col-sm-6 col-md-6 text-center">
                 <h3 id="eovsaDySpecLoadError">(Sorry, the dynamic spectrogram image is not available for this
                     date.)</h3>
                 <img class="img-responsive center-block" id="eovsaDySpecFullRes" src="img/loading_w.gif"
                      onerror="$('#eovsaDySpecFullRes').hide();$('#eovsaDySpecLoadError').show();"
-                     onload="$('#eovsaDySpecFullRes').show();;$('#eovsaDySpecLoadError').hide();">
+                     onload="$('#eovsaDySpecFullRes').show();$('#eovsaDySpecLoadError').hide();">
                 <div id="dspec_1_options">
                     <div id="eovsaDySpecFullResMode" class="btn-group-xs">
                         <button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
