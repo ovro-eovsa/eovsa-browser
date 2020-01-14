@@ -1,4 +1,56 @@
 (function (window) {
+
+    // window.downloadURL = function (dataurl, filename) {
+    //     var link = document.createElement("a");
+    //     link.download = filename;
+    //     link.href = dataurl;
+    //     document.body.appendChild(link);
+    //     link.click();
+    //     document.body.removeChild(link);
+    //     delete link;
+    // }
+
+    // window.downloadURL = function (dataurl, filename) {
+    //     var a = document.createElement("a");
+    //     a.href = dataurl;
+    //     a.setAttribute("download", filename);
+    //     a.click();
+    // }
+
+    window.downloadURL = function (url, filename) {
+        fetch(url).then(function(t) {
+            return t.blob().then((b)=>{
+                    var a = document.createElement("a");
+                    a.href = URL.createObjectURL(b);
+                    a.setAttribute("download", filename);
+                    a.click();
+                }
+            );
+        });
+    }
+
+    // window.downloadURL = function (dataurl, fileName, type="text/plain") {
+    //     // Create an invisible A element
+    //     var a = document.createElement("a");
+    //     a.style.display = "none";
+    //     document.body.appendChild(a);
+    //
+    //     // Set the HREF to a Blob representation of the data to be downloaded
+    //     a.href = window.URL.createObjectURL(
+    //         new Blob([dataurl], { type })
+    //     );
+    //
+    //     // Use download attribute to set set desired file name
+    //     a.setAttribute("download", fileName);
+    //
+    //     // Trigger the download by simulating click
+    //     a.click();
+    //     console.log(a.href)
+    //     // Cleanup
+    //     window.URL.revokeObjectURL(a.href);
+    //     document.body.removeChild(a);
+    // }
+
     window.getUTCDateString = function (date, separator) {
         var day = "" + (date.getUTCDate() > 9 ? date.getUTCDate() : "0" + date.getUTCDate()),
             month = "" + (date.getUTCMonth() > 8 ? date.getUTCMonth() + 1 : "0" + (date.getUTCMonth() + 1)),
@@ -81,12 +133,23 @@
 
         //FITS file download buttons
         $('button.dl-img-btn-fits').off("click").click(function () {
-            var channelValue = $(this).parent().parent().parent().find(".channel-select").attr('chosen');
-            if (channelValue.startsWith('_eovsa_bd')) {
-                var url = getEovsaImgURL(globalDate,"",channelValue,"fits");
-                console.log("Opening url " + url);
-                window.open(url);
+            if ($(this).attr('id') =='eovsaDySpecFits') {
+                var channelValue = $(this).parent().parent().parent().find(".dspec-select").attr('chosen');
             } else {
+                var channelValue = $(this).parent().parent().parent().find(".channel-select").attr('chosen');
+            }
+            if (channelValue.startsWith('_eovsa_bd')) {
+                var url = getEovsaImgURL(globalDate, "", channelValue, "fits");
+                console.log("Opening url " + url);
+                // window.open(url);
+                window.downloadURL(url, url.substring(url.lastIndexOf('/') + 1));
+            } else if (['XP', 'TP'].indexOf(channelValue) >= 0) {
+                var url = getEovsaImgURL(globalDate, "", channelValue, "fits");
+                console.log("Opening url " + url);
+                // window.open(url);
+                window.downloadURL(url, url.substring(url.lastIndexOf('/') + 1));
+            }
+            else {
                 alert("FITS file not available for this channel.");
             }
         });

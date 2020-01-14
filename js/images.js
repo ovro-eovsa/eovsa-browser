@@ -11,33 +11,37 @@
         if (['jpg', 'png'].indexOf(imgExt.toLowerCase()) >= 0) {
             return "http://www.ovsa.njit.edu/SynopticImg/eovsamedia/eovsa-browser/" + getUTCDateString(date, "/") + "/" + imgtype + channelValue + "." + imgExt;
         } else if (imgExt.toLowerCase() == 'fits') {
-            if (date.valueOf() > (new Date("2019-02-22")).valueOf()) {
-                var spwmap = {
-                    "_eovsa_bd01": '00-01',
-                    "_eovsa_bd02": '02-05',
-                    "_eovsa_bd03": '06-10',
-                    "_eovsa_bd04": '11-20',
-                    "_eovsa_bd05": '21-30',
-                    "_eovsa_bd06": '31-43',
-                    "_eovsa_bd07": '44-49'
-                };
+            if (['TP', 'XP'].indexOf(channelValue) >= 0) {
+                console.log("http://www.ovsa.njit.edu/fits/qlook_10m/" + getUTCDateString(date, "/") + "/EOVSA_"+channelValue+"all_" + getUTCDateString(date, "") + ".fts")
+                return "http://www.ovsa.njit.edu/fits/qlook_10m/" + getUTCDateString(date, "/") + "/EOVSA_"+channelValue+"all_" + getUTCDateString(date, "") + ".fts";
             } else {
-                var spwmap = {
-                    "_eovsa_bd01": '01~03',
-                    "_eovsa_bd02": '04~09',
-                    "_eovsa_bd03": '10~16',
-                    "_eovsa_bd04": '17~24',
-                    "_eovsa_bd05": '25~30',
-                    "_eovsa_bd06": '',
-                    "_eovsa_bd07": ''
-                };
+                if (date.valueOf() > (new Date("2019-02-22")).valueOf()) {
+                    var spwmap = {
+                        "_eovsa_bd01": '00-01',
+                        "_eovsa_bd02": '02-05',
+                        "_eovsa_bd03": '06-10',
+                        "_eovsa_bd04": '11-20',
+                        "_eovsa_bd05": '21-30',
+                        "_eovsa_bd06": '31-43',
+                        "_eovsa_bd07": '44-49'
+                    };
+                } else {
+                    var spwmap = {
+                        "_eovsa_bd01": '01~03',
+                        "_eovsa_bd02": '04~09',
+                        "_eovsa_bd03": '10~16',
+                        "_eovsa_bd04": '17~24',
+                        "_eovsa_bd05": '25~30',
+                        "_eovsa_bd06": '',
+                        "_eovsa_bd07": ''
+                    };
+                }
+                return "http://www.ovsa.njit.edu/fits/qlook_10m/" + getUTCDateString(date, "/") + "/eovsa_" + getUTCDateString(date, "") + ".spw" + spwmap[channelValue] + ".tb.disk.fits";
             }
-            ;
-            return "http://www.ovsa.njit.edu/fits/qlook_10m/" + getUTCDateString(date, "/") + "/eovsa_" + getUTCDateString(date, "") + ".spw" + spwmap[channelValue] + ".tb.disk.fits";
+
         } else {
             return ""
         }
-        ;
     };
 
 
