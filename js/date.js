@@ -18,8 +18,8 @@
     // }
 
     window.downloadURL = function (url, filename) {
-        fetch(url).then(function(t) {
-            return t.blob().then((b)=>{
+        fetch(url).then(function (t) {
+            return t.blob().then((b) => {
                     var a = document.createElement("a");
                     a.href = URL.createObjectURL(b);
                     a.setAttribute("download", filename);
@@ -133,7 +133,7 @@
 
         //FITS file download buttons
         $('button.dl-img-btn-fits').off("click").click(function () {
-            if ($(this).attr('id') =='eovsaDySpecFits') {
+            if ($(this).attr('id') == 'eovsaDySpecFits') {
                 var channelValue = $(this).parent().parent().parent().find(".dspec-select").attr('chosen');
             } else {
                 var channelValue = $(this).parent().parent().parent().find(".channel-select").attr('chosen');
@@ -142,14 +142,13 @@
                 var url = getEovsaImgURL(globalDate, "", channelValue, "fits");
                 console.log("Opening url " + url);
                 // window.open(url);
-                window.downloadURL(url.replace('http://www.ovsa.njit.edu/',''), url.substring(url.lastIndexOf('/') + 1));
+                window.downloadURL(url.replace('http://www.ovsa.njit.edu/', '../'), url.substring(url.lastIndexOf('/') + 1));
             } else if (['XP', 'TP'].indexOf(channelValue) >= 0) {
                 var url = getEovsaImgURL(globalDate, "", channelValue, "fits");
                 console.log("Opening url " + url);
                 // window.open(url);
-                window.downloadURL(url.replace('http://www.ovsa.njit.edu/',''), url.substring(url.lastIndexOf('/') + 1));
-            }
-            else {
+                window.downloadURL(url.replace('http://www.ovsa.njit.edu/', '../'), url.substring(url.lastIndexOf('/') + 1));
+            } else {
                 alert("FITS file not available for this channel.");
             }
         });
