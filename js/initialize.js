@@ -66,7 +66,7 @@
         //Update the AIA Light Curves
         var lightCurves = window.document.getElementById('eovsaDySpec1minRes');
         if (lightCurves) {
-            lightCurves.src = "http://ovsa.njit.edu/flaremon/daily/" + globalDate.getUTCFullYear() + "/XSP" + getUTCDateString(globalDate, "") + ".png";
+            lightCurves.src = "../flaremon/daily/" + globalDate.getUTCFullYear() + "/XSP" + getUTCDateString(globalDate, "") + ".png";
         }
 
         var lightCurves2 = window.document.getElementById('eovsaDySpecFullRes');

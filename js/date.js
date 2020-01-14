@@ -1,22 +1,5 @@
 (function (window) {
 
-    // window.downloadURL = function (dataurl, filename) {
-    //     var link = document.createElement("a");
-    //     link.download = filename;
-    //     link.href = dataurl;
-    //     document.body.appendChild(link);
-    //     link.click();
-    //     document.body.removeChild(link);
-    //     delete link;
-    // }
-
-    // window.downloadURL = function (dataurl, filename) {
-    //     var a = document.createElement("a");
-    //     a.href = dataurl;
-    //     a.setAttribute("download", filename);
-    //     a.click();
-    // }
-
     window.downloadURL = function (url, filename) {
         fetch(url).then(function (t) {
             return t.blob().then((b) => {
@@ -29,27 +12,6 @@
         });
     }
 
-    // window.downloadURL = function (dataurl, fileName, type="text/plain") {
-    //     // Create an invisible A element
-    //     var a = document.createElement("a");
-    //     a.style.display = "none";
-    //     document.body.appendChild(a);
-    //
-    //     // Set the HREF to a Blob representation of the data to be downloaded
-    //     a.href = window.URL.createObjectURL(
-    //         new Blob([dataurl], { type })
-    //     );
-    //
-    //     // Use download attribute to set set desired file name
-    //     a.setAttribute("download", fileName);
-    //
-    //     // Trigger the download by simulating click
-    //     a.click();
-    //     console.log(a.href)
-    //     // Cleanup
-    //     window.URL.revokeObjectURL(a.href);
-    //     document.body.removeChild(a);
-    // }
 
     window.getUTCDateString = function (date, separator) {
         var day = "" + (date.getUTCDate() > 9 ? date.getUTCDate() : "0" + date.getUTCDate()),
@@ -142,12 +104,12 @@
                 var url = getEovsaImgURL(globalDate, "", channelValue, "fits");
                 console.log("Opening url " + url);
                 // window.open(url);
-                window.downloadURL(url.replace('http://www.ovsa.njit.edu/', '../'), url.substring(url.lastIndexOf('/') + 1));
+                window.downloadURL(url, url.substring(url.lastIndexOf('/') + 1));
             } else if (['XP', 'TP'].indexOf(channelValue) >= 0) {
                 var url = getEovsaImgURL(globalDate, "", channelValue, "fits");
                 console.log("Opening url " + url);
                 // window.open(url);
-                window.downloadURL(url.replace('http://www.ovsa.njit.edu/', '../'), url.substring(url.lastIndexOf('/') + 1));
+                window.downloadURL(url, url.substring(url.lastIndexOf('/') + 1));
             } else {
                 alert("FITS file not available for this channel.");
             }
