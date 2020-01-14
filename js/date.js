@@ -142,12 +142,12 @@
                 var url = getEovsaImgURL(globalDate, "", channelValue, "fits");
                 console.log("Opening url " + url);
                 // window.open(url);
-                window.downloadURL(url, url.substring(url.lastIndexOf('/') + 1));
+                window.downloadURL(url.replace('http://www.ovsa.njit.edu/',''), url.substring(url.lastIndexOf('/') + 1));
             } else if (['XP', 'TP'].indexOf(channelValue) >= 0) {
                 var url = getEovsaImgURL(globalDate, "", channelValue, "fits");
                 console.log("Opening url " + url);
                 // window.open(url);
-                window.downloadURL(url, url.substring(url.lastIndexOf('/') + 1));
+                window.downloadURL(url.replace('http://www.ovsa.njit.edu/',''), url.substring(url.lastIndexOf('/') + 1));
             }
             else {
                 alert("FITS file not available for this channel.");
