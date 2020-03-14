@@ -8,12 +8,13 @@
         /**
          * imgtype: 't' (thumbnail), 'l' (low resolution), 'f' (full resolution)
          */
+        let qlookfitsdir = "../fits/synoptic/";
         if (['jpg', 'png'].indexOf(imgExt.toLowerCase()) >= 0) {
             return "../SynopticImg/eovsamedia/eovsa-browser/" + getUTCDateString(date, "/") + "/" + imgtype + channelValue + "." + imgExt;
         } else if (imgExt.toLowerCase() == 'fits') {
             if (['TP', 'XP'].indexOf(channelValue) >= 0) {
-                console.log("../fits/qlook_10m/" + getUTCDateString(date, "/") + "/EOVSA_"+channelValue+"all_" + getUTCDateString(date, "") + ".fts")
-                return "../fits/qlook_10m/" + getUTCDateString(date, "/") + "/EOVSA_"+channelValue+"all_" + getUTCDateString(date, "") + ".fts";
+                console.log(qlookfitsdir + getUTCDateString(date, "/") + "/EOVSA_"+channelValue+"all_" + getUTCDateString(date, "") + ".fts");
+                return qlookfitsdir + getUTCDateString(date, "/") + "/EOVSA_"+channelValue+"all_" + getUTCDateString(date, "") + ".fts";
             } else {
                 if (date.valueOf() > (new Date("2019-02-22")).valueOf()) {
                     var spwmap = {
@@ -36,7 +37,7 @@
                         "_eovsa_bd07": ''
                     };
                 }
-                return "../fits/qlook_10m/" + getUTCDateString(date, "/") + "/eovsa_" + getUTCDateString(date, "") + ".spw" + spwmap[channelValue] + ".tb.disk.fits";
+                return qlookfitsdir + getUTCDateString(date, "/") + "/eovsa_" + getUTCDateString(date, "") + ".spw" + spwmap[channelValue] + ".tb.disk.fits";
             }
 
         } else {
@@ -63,7 +64,7 @@
         function channel(channelId) {
             this.channelId = channelId;
             this.channelUrl = function () {
-                var channelValue = document.getElementById(this.channelId.slice(0, -1) + "_" + this.channelId.slice(-1) + "_select").getAttribute("chosen")
+                var channelValue = document.getElementById(this.channelId.slice(0, -1) + "_" + this.channelId.slice(-1) + "_select").getAttribute("chosen");
                 return window.getEovsaImgURL(date, "t", channelValue);
                 // if (channelValue.startsWith('_eovsa_bd')) {
                 //     return window.getEovsaImgURL(date, "t", channelValue);
@@ -71,7 +72,7 @@
                 //     return window.getHelioviewerURL(256, channelValue, date);
                 // };
             };
-        };
+        }
 
         var channel1Id = "channel1",
             channel2Id = "channel2",
