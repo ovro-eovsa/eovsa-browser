@@ -13,8 +13,11 @@
             return "../SynopticImg/eovsamedia/eovsa-browser/" + getUTCDateString(date, "/") + "/" + imgtype + channelValue + "." + imgExt;
         } else if (imgExt.toLowerCase() == 'fits') {
             if (['TP', 'XP'].indexOf(channelValue) >= 0) {
-                console.log(qlookfitsdir + getUTCDateString(date, "/") + "/EOVSA_"+channelValue+"all_" + getUTCDateString(date, "") + ".fts");
-                return qlookfitsdir + getUTCDateString(date, "/") + "/EOVSA_"+channelValue+"all_" + getUTCDateString(date, "") + ".fts";
+                console.log(qlookfitsdir + getUTCDateString(date, "/") + "/EOVSA_" + channelValue + "all_" + getUTCDateString(date, "") + ".fts");
+                return qlookfitsdir + getUTCDateString(date, "/") + "/EOVSA_" + channelValue + "all_" + getUTCDateString(date, "") + ".fts";
+            } else if (channelValue == 'path') {
+                console.log(qlookfitsdir + getUTCDateString(date, "/"));
+                return qlookfitsdir + getUTCDateString(date, "/");
             } else {
                 if (date.valueOf() > (new Date("2019-02-22")).valueOf()) {
                     var spwmap = {

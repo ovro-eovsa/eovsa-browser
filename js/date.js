@@ -115,6 +115,13 @@
             }
         });
 
+        //FITS file download buttons
+        $('button.dl-img-btn-synoptic-page').off("click").click(function () {
+            var url = getEovsaImgURL(globalDate, "", "path", "fits");
+            console.log("Opening url " + url);
+            window.open(url);
+        });
+
     };
 
     /**
