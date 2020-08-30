@@ -86,26 +86,7 @@
 
 <div class="container-fluid">
 
-    <!-- DATE CONTROLS -->
-    <div class="row" id="dateControls">
 
-        <div class="col-md-6 col-sm-12 col-xs-12 vcenter text-left">
-            <h2 class="widget-label" id="sun-today-date" style="margin-top:0px">Obs Date: </h2>
-        </div><!-- vertical alignment hack (https://stackoverflow.com/questions/20547819/vertical-align-with-bootstrap-3)
---->
-        <div class="col-md-5 col-sm-8 col-xs-12 vcenter text-left">
-			<span style="padding-left:10px; padding-right:10px" id="date_stuff">
-				<button class="btn btn-primary btn-sm" onclick="prevDayTrigger('datepicker', globalDate);">&#8592; Prev. Day</button>
-				<button class="btn btn-primary btn-sm" onclick="nextDayTrigger('datepicker', globalDate);">Next Day &#8594;</button>
-				<button class="btn btn-primary btn-sm" onclick="currDayTrigger('datepicker');">Newest &#128343; </button>
-				<input style="width:90px" id="datepicker" type="text" data-date-format="yyyy-mm-dd" readonly>
-				<span class="add-on"><i class="glyphicon glyphicon-calendar"></i></span>
-                <button id="synoptic-page" class="btn btn-primary btn-sm dl-img-btn-synoptic-page">Synoptic Data</button>
-			</span>
-        </div>
-
-
-    </div>
 
 
     <!-- DYNAMIC SPECTRA -->
@@ -143,6 +124,26 @@
         </div>
     </div>
 
+    <!-- DATE CONTROLS -->
+    <div class="row" id="dateControls">
+
+        <div class="col-md-6 col-sm-12 col-xs-12 vcenter text-left">
+            <h2 class="widget-label" id="sun-today-date" style="margin-top:0px">Obs Date: </h2>
+        </div><!-- vertical alignment hack (https://stackoverflow.com/questions/20547819/vertical-align-with-bootstrap-3)
+--->
+        <div class="col-md-5 col-sm-8 col-xs-12 vcenter text-left">
+			<span style="padding-left:10px; padding-right:10px" id="date_stuff">
+				<button class="btn btn-primary btn-sm" onclick="prevDayTrigger('datepicker', globalDate);">&#8592; Prev. Day</button>
+				<button class="btn btn-primary btn-sm" onclick="nextDayTrigger('datepicker', globalDate);">Next Day &#8594;</button>
+				<button class="btn btn-primary btn-sm" onclick="currDayTrigger('datepicker');">Newest &#128343; </button>
+				<input style="width:90px" id="datepicker" type="text" data-date-format="yyyy-mm-dd" readonly>
+				<span class="add-on"><i class="glyphicon glyphicon-calendar"></i></span>
+                <button id="synoptic-page" class="btn btn-primary btn-sm dl-img-btn-synoptic-page">Synoptic Data</button>
+			</span>
+        </div>
+
+
+    </div>
 
     <!-- IMAGE CHANNELS -->
     <div class="row" id="channelLabels">
@@ -289,9 +290,10 @@
     </div>
 
 
+
     <!-- CREDITS -->
     <div class="row" id="footer" style="margin-top:10px">
-        <img alt="Brand" src="img/Logo_Tempus_Sans_Large.jpg" height="65px">
+        <img alt="Brand" src="img/eovsa_logo.png" height="56px">
         <img alt="nasa" src="img/NASA_logo.svg" height="65px">
         <p id="copyRight" class="muted credit text-center">Copyright © EOVSA Website 2019</p>
         <!-- Scroll back to top button (https://www.templatemonster.com/blog/back-to-top-button-css-jquery/)-->
