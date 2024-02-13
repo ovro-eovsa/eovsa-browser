@@ -39,7 +39,7 @@
     window.currDayTrigger = function (elementId) {
 
         var currDayDate = new Date();
-        currDayDate.setDate(currDayDate.getDate() - 2);
+        currDayDate.setDate(currDayDate.getDate() - 1);
         $('#' + elementId).trigger('changeDate', [currDayDate]);
         console.log("Changed " + elementId + ".value to " + document.getElementById(elementId).value);
         currentDate = currDayDate;
