@@ -72,9 +72,9 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Software<b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="https://github.com/dgary50/eovsa"><i class="fa fa-github"
-                                                                          aria-hidden="true"></i> EOVSA github</a></li>
-                        <li><a href="https://github.com/suncasa/suncasa"><i class="fa fa-github"
+                        <li><a href="https://github.com/ovro-eovsa/eovsapy"><i class="fa fa-github"
+                                                                          aria-hidden="true"></i> EOVSApy github</a></li>
+                        <li><a href="https://github.com/suncasa/suncasa-src"><i class="fa fa-github"
                                                                             aria-hidden="true"></i> SunCASA
                                 github</a></li>
                     </ul>
@@ -85,8 +85,6 @@
 </nav>
 
 <div class="container-fluid">
-
-
 
 
     <!-- DYNAMIC SPECTRA -->
@@ -146,148 +144,160 @@
     </div>
 
     <!-- IMAGE CHANNELS -->
-    <div class="row" id="channelLabels">
-<!--
-        <div class="col-sm-6 vcenter">
-            <h2 class="widget-label" style="color: white">Image Channels</h2>
-        </div>
--->
-        <div class="container-fluid"> <!-- this container fixes a display bug for Safari on narrow displays -->
-            <div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
-                <img id="channel1" class="channel-img img-responsive center-block" src="img/loading.gif"
-                     onerror="this.src='img/nodata.jpg';">
-                <div id="channel_1_options">
-                    <div id="channel_1_wavelengths" class="btn-group-xs">
-                        <button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
-                        <button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
-                        <button class="btn btn-primary dl-img-btn-fits">FITS</button>
-                    </div>
-                </div>
-                <div class="channel-select" id="channel_1_select" chosen="_eovsa_bd01">
-                    <span value="_eovsa_bd01" class="channel-active">1.4GHz</span> |
-                    <span value="0211">211</span> |
-                    <span value="0304">304</span> |
-                    <span value="0094">094</span>
-                </div>
-            </div>
+	<div class="row">
+		<!-- Left Section: 3x2 Channel Grid -->
+		<div class="col-xs-12 col-sm-8 col-md-8" id="channelLabels">
+	<!--
+			<div class="col-sm-6 vcenter">
+				<h2 class="widget-label" style="color: white">Image Channels</h2>
+			</div>
+	-->
+			<div class="container-fluid"> <!-- this container fixes a display bug for Safari on narrow displays -->
+				<div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
+					<img id="channel1" class="channel-img img-responsive center-block" src="img/loading.gif"
+						 onerror="this.src='img/nodata.jpg';">
+					<div id="channel_1_options">
+						<div id="channel_1_wavelengths" class="btn-group-xs">
+							<button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
+							<button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
+							<button class="btn btn-primary dl-img-btn-fits">FITS</button>
+						</div>
+					</div>
+					<div class="channel-select" id="channel_1_select" chosen="_eovsa_bd01">
+						<span value="_eovsa_bd01" class="channel-active">1.4GHz</span> |
+						<span value="0211">211</span> |
+						<span value="0304">304</span> |
+						<span value="0094">094</span>
+					</div>
+				</div>
 
-            <div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
-                <img id="channel2" class="channel-img img-responsive center-block" src="img/loading.gif"
-                     onerror="this.src='img/nodata.jpg';">
-                <div id="channel_2_options">
-                    <div id="channel_2_wavelengths" class="btn-group-xs">
-                        <button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
-                        <button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
-                        <button class="btn btn-primary dl-img-btn-fits">FITS</button>
-                    </div>
-                </div>
-                <div class="channel-select" id="channel_2_select" chosen="_eovsa_bd02">
-                    <span value="_eovsa_bd02" class="channel-active">3.0GHz</span> |
-                    <span value="0211">211</span> |
-                    <span value="0304">304</span> |
-                    <span value="0131">131</span>
-                </div>
-            </div>
+				<div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
+					<img id="channel2" class="channel-img img-responsive center-block" src="img/loading.gif"
+						 onerror="this.src='img/nodata.jpg';">
+					<div id="channel_2_options">
+						<div id="channel_2_wavelengths" class="btn-group-xs">
+							<button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
+							<button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
+							<button class="btn btn-primary dl-img-btn-fits">FITS</button>
+						</div>
+					</div>
+					<div class="channel-select" id="channel_2_select" chosen="_eovsa_bd02">
+						<span value="_eovsa_bd02" class="channel-active">3.0GHz</span> |
+						<span value="0211">211</span> |
+						<span value="0304">304</span> |
+						<span value="0131">131</span>
+					</div>
+				</div>
 
-            <div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
-                <img id="channel3" class="channel-img img-responsive center-block" src="img/loading.gif"
-                     onerror="this.src='img/nodata.jpg';">
-                <div id="channel_3_options">
-                    <div id="channel_3_wavelengths" class="btn-group-xs">
-                        <button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
-                        <button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
-                        <button class="btn btn-primary dl-img-btn-fits">FITS</button>
-                    </div>
-                </div>
-                <div class="channel-select" id="channel_3_select" chosen="_eovsa_bd03">
-                    <span value="_eovsa_bd03" class="channel-active">4.5GHz</span> |
-                    <span value="0304">304</span> |
-                    <span value="0171">171</span> |
-                    <span value="0193">193</span>
-                </div>
-            </div>
-        </div>
+				<div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
+					<img id="channel3" class="channel-img img-responsive center-block" src="img/loading.gif"
+						 onerror="this.src='img/nodata.jpg';">
+					<div id="channel_3_options">
+						<div id="channel_3_wavelengths" class="btn-group-xs">
+							<button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
+							<button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
+							<button class="btn btn-primary dl-img-btn-fits">FITS</button>
+						</div>
+					</div>
+					<div class="channel-select" id="channel_3_select" chosen="_eovsa_bd03">
+						<span value="_eovsa_bd03" class="channel-active">4.5GHz</span> |
+						<span value="0304">304</span> |
+						<span value="0171">171</span> |
+						<span value="0193">193</span>
+					</div>
+				</div>
+			</div>
 
-        <div class="container-fluid"> <!-- this container fixes a display bug for Safari on narrow displays -->
-            <div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
-                <img id="channel4" class="channel-img img-responsive center-block" src="img/loading.gif"
-                     onerror="this.src='img/nodata.jpg';">
-                <div id="channel_4_options">
-                    <div id="channel_4_wavelengths" class="btn-group-xs">
-                        <button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
-                        <button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
-                        <button class="btn btn-primary dl-img-btn-fits">FITS</button>
-                    </div>
-                </div>
-                <div class="channel-select" id="channel_4_select" chosen="_eovsa_bd04">
-                    <span value="_eovsa_bd04" class="channel-active">6.9GHz</span> |
-                    <span value="_Halph_fr">H alph</span> |
-                    <span value="0304">304</span> |
-                    <span value="0335">335</span>
-                </div>
-            </div>
+			<div class="container-fluid"> <!-- this container fixes a display bug for Safari on narrow displays -->
+				<div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
+					<img id="channel4" class="channel-img img-responsive center-block" src="img/loading.gif"
+						 onerror="this.src='img/nodata.jpg';">
+					<div id="channel_4_options">
+						<div id="channel_4_wavelengths" class="btn-group-xs">
+							<button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
+							<button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
+							<button class="btn btn-primary dl-img-btn-fits">FITS</button>
+						</div>
+					</div>
+					<div class="channel-select" id="channel_4_select" chosen="_eovsa_bd04">
+						<span value="_eovsa_bd04" class="channel-active">6.9GHz</span> |
+						<span value="_Halph_fr">H alph</span> |
+						<span value="0304">304</span> |
+						<span value="0335">335</span>
+					</div>
+				</div>
 
-            <div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
-                <img id="channel5" class="channel-img img-responsive center-block" src="img/loading.gif"
-                     onerror="this.src='img/nodata.jpg';">
-                <div id="channel_5_options">
-                    <div id="channel_5_wavelengths" class="btn-group-xs">
-                        <button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
-                        <button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
-                        <button class="btn btn-primary dl-img-btn-fits">FITS</button>
-                    </div>
-                </div>
-                <div class="channel-select" id="channel_5_select" chosen="_eovsa_bd05">
-                    <span value="_eovsa_bd05" class="channel-active">10.2GHz</span> |
-                    <span value="0304">304</span> |
-                    <span value="_HMImag">HMI B(los)</span> |
-                    <span value="_HMIcont">HMI cont</span>
-                </div>
-            </div>
+				<div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
+					<img id="channel5" class="channel-img img-responsive center-block" src="img/loading.gif"
+						 onerror="this.src='img/nodata.jpg';">
+					<div id="channel_5_options">
+						<div id="channel_5_wavelengths" class="btn-group-xs">
+							<button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
+							<button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
+							<button class="btn btn-primary dl-img-btn-fits">FITS</button>
+						</div>
+					</div>
+					<div class="channel-select" id="channel_5_select" chosen="_eovsa_bd05">
+						<span value="_eovsa_bd05" class="channel-active">10.2GHz</span> |
+						<span value="0304">304</span> |
+						<span value="_HMImag">HMI B(los)</span> |
+						<span value="_HMIcont">HMI cont</span>
+					</div>
+				</div>
 
-            <div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
-                <img id="channel6" class="channel-img img-responsive center-block" src="img/loading.gif"
-                     onerror="this.src='img/nodata.jpg';">
-                <div id="channel_6_options">
-                    <div id="channel_6_wavelengths" class="btn-group-xs">
-                        <button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
-                        <button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
-                        <button class="btn btn-primary dl-img-btn-fits">FITS</button>
-                    </div>
-                </div>
-                <div class="channel-select" id="channel_6_select" chosen="_eovsa_bd06">
-                    <span value="_eovsa_bd06" class="channel-active">13.9GHz</span> |
-                    <span value="_eovsa_bd07">17.0GHz</span> |
-                    <span value="0304">304</span> |
-                    <span value="1700">1700</span>
-                </div>
-            </div>
-        </div>
+				<div class="col-xs-12 col-sm-4 col-md-4 text-center channel-area">
+					<img id="channel6" class="channel-img img-responsive center-block" src="img/loading.gif"
+						 onerror="this.src='img/nodata.jpg';">
+					<div id="channel_6_options">
+						<div id="channel_6_wavelengths" class="btn-group-xs">
+							<button class="btn btn-primary dl-img-btn-LoRes">LoRes</button>
+							<button class="btn btn-primary dl-img-btn-HiRes">HiRes</button>
+							<button class="btn btn-primary dl-img-btn-fits">FITS</button>
+						</div>
+					</div>
+					<div class="channel-select" id="channel_6_select" chosen="_eovsa_bd06">
+						<span value="_eovsa_bd06" class="channel-active">13.9GHz</span> |
+						<span value="_eovsa_bd07">17.0GHz</span> |
+						<span value="0304">304</span> |
+						<span value="1700">1700</span>
+					</div>
+				</div>
+			</div>
 
-        <div class="container-fluid"> <!-- this container fixes a display bug for Safari on narrow displays -->
-            <div class="col-xs-12 text-center" style="color:#85858c">
-                Tip: Hover over the frequency/wavelength labels underneath the set of images to change the thumbnail
-                image.
-            </div>
 
-            <!--            <div id="fits-links" class="col-xs-12 img-channels-links text-center" style="margin-top:10px">-->
-            <!--                FITS files (for planning purposes):-->
-            <!--                <span style="font-weight: normal">-->
-            <!--					<a class="img-channels-click-here" id="4500-fits" target="_blank">4500</a> |-->
-            <!--					<a class="img-channels-click-here" id="1700-fits" target="_blank">1700</a> |-->
-            <!--					<a class="img-channels-click-here" id="1600-fits" target="_blank">1600</a> |-->
-            <!--					<a class="img-channels-click-here" id="335-fits" target="_blank">335</a> |-->
-            <!--					<a class="img-channels-click-here" id="304-fits" target="_blank">304</a> |-->
-            <!--					<a class="img-channels-click-here" id="211-fits" target="_blank">211</a> |-->
-            <!--					<a class="img-channels-click-here" id="193-fits" target="_blank">193</a> |-->
-            <!--					<a class="img-channels-click-here" id="171-fits" target="_blank">171</a> |-->
-            <!--					<a class="img-channels-click-here" id="131-fits" target="_blank">131</a> |-->
-            <!--					<a class="img-channels-click-here" id="94-fits" target="_blank">94</a> |-->
-            <!--					<a class="img-channels-click-here" id="blos-fits" target="_blank">B(los)</a>-->
-            <!--				</span>-->
-            <!--            </div>-->
-        </div>
-    </div>
+
+			<div class="container-fluid"> <!-- this container fixes a display bug for Safari on narrow displays -->
+				<div class="col-xs-12 text-center" style="color:#85858c">
+					Tip: Hover over the frequency/wavelength labels underneath the set of images to change the thumbnail
+					image.
+				</div>
+
+				<!--            <div id="fits-links" class="col-xs-12 img-channels-links text-center" style="margin-top:10px">-->
+				<!--                FITS files (for planning purposes):-->
+				<!--                <span style="font-weight: normal">-->
+				<!--					<a class="img-channels-click-here" id="4500-fits" target="_blank">4500</a> |-->
+				<!--					<a class="img-channels-click-here" id="1700-fits" target="_blank">1700</a> |-->
+				<!--					<a class="img-channels-click-here" id="1600-fits" target="_blank">1600</a> |-->
+				<!--					<a class="img-channels-click-here" id="335-fits" target="_blank">335</a> |-->
+				<!--					<a class="img-channels-click-here" id="304-fits" target="_blank">304</a> |-->
+				<!--					<a class="img-channels-click-here" id="211-fits" target="_blank">211</a> |-->
+				<!--					<a class="img-channels-click-here" id="193-fits" target="_blank">193</a> |-->
+				<!--					<a class="img-channels-click-here" id="171-fits" target="_blank">171</a> |-->
+				<!--					<a class="img-channels-click-here" id="131-fits" target="_blank">131</a> |-->
+				<!--					<a class="img-channels-click-here" id="94-fits" target="_blank">94</a> |-->
+				<!--					<a class="img-channels-click-here" id="blos-fits" target="_blank">B(los)</a>-->
+				<!--				</span>-->
+				<!--            </div>-->
+			</div>
+		</div>
+		    <!-- Right Section: New Figure -->
+		<div class="col-xs-12 col-sm-4 col-md-4 text-center">
+			<h3 id="OVSAsSpecFigLoadError">(Sorry, the additional figure is not available for this date.)</h3>
+			<img class="img-responsive center-block" id="OVSAsSpecFig" src="img/loading_w.gif"
+				 onerror="$('#OVSAsSpecFig').hide();$('#OVSAsSpecFigLoadError').show();"
+				 onload="$('#OVSAsSpecFig').show();$('#OVSAsSpecFigLoadError').hide();">
+		</div>
+	</div>
 
 
 
@@ -295,6 +305,7 @@
     <div class="row" id="footer" style="margin-top:10px">
         <img alt="Brand" src="img/eovsa_logo.svg" height="57px">
         <img alt="nasa" src="img/NASA_logo.svg" height="65px">
+		<img alt="njit" src="img/NJIT_logo.svg" height="57px">
         <p id="copyRight" class="muted credit text-center">Copyright © EOVSA Website 2024</p>
         <!-- Scroll back to top button (https://www.templatemonster.com/blog/back-to-top-button-css-jquery/)-->
         <a id="backToTopButton"></a>
