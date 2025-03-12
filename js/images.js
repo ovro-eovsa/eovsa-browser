@@ -72,6 +72,14 @@
     window.loadImage = function (frameId, src) {
         var img = document.getElementById(frameId);
         img.src = src;
+
+        img.onerror = function () {
+            if (!img.retryAttempted && src.includes('_v3.0')) {
+                img.retryAttempted = true;
+                var newSrc = src.replace('_v3.0', '');
+                img.src = newSrc;
+            }
+        };
     };
 
 
