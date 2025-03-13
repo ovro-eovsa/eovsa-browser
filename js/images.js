@@ -74,7 +74,7 @@
         img.src = src;
 
         img.onerror = function () {
-            if (src.includes('_v3.0')) {
+            if (src.includes('_v3.0') && src.includes('_eovsa_bd')) {
                 var newSrc = src.replace('_v3.0', '');
                 img.src = newSrc;
             }
