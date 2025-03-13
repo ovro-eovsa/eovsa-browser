@@ -77,6 +77,12 @@
             if (src.includes('_v3.0') && src.includes('_eovsa_bd')) {
                 var newSrc = src.replace('_v3.0', '');
                 img.src = newSrc;
+
+                img.onerror = function () {
+                    img.src = 'img/nodata.jpg';
+                };
+            } else {
+                img.src = 'img/nodata.jpg';
             }
         };
     };
