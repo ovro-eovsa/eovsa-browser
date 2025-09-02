@@ -51,7 +51,7 @@
 
 	window.loadOVSASpecForDate = function (date) {
 		let OVSASpecURL = "../SynopticImg/eovsamedia/eovsa-browser/"
-			+ getUTCDateString(date, "/") + "/fig-OVSA_Spec_" + getUTCDateString(date, "") + ".";
+			+ getUTCDateString(date, "/") + "/fig-OVSA_spec_" + getUTCDateString(date, "") + ".";
 
 		// // Check if it should be .jpg or .png
 		// let imgExt = (date.valueOf() > (new Date("2025-01-27")).valueOf()) ? "jpg" : "png";
