@@ -49,15 +49,15 @@
     };
 
 
-	window.loadOVSAsSpecForDate = function (date) {
-		let OVSAsSpecURL = "../SynopticImg/eovsamedia/eovsa-browser/"
-			+ getUTCDateString(date, "/") + "/fig-OVSAs_spec_" + getUTCDateString(date, "") + ".";
+	window.loadOVSASpecForDate = function (date) {
+		let OVSASpecURL = "../SynopticImg/eovsamedia/eovsa-browser/"
+			+ getUTCDateString(date, "/") + "/fig-OVSASpec_" + getUTCDateString(date, "") + ".";
 
 		// Check if it should be .jpg or .png
 		let imgExt = (date.valueOf() > (new Date("2025-01-27")).valueOf()) ? "jpg" : "png";
-		OVSAsSpecURL += imgExt;
+		OVSASpecURL += imgExt;
 
-		window.loadImage("OVSAsSpecFig", OVSAsSpecURL);
+		window.loadImage("OVSASpecFig", OVSASpecURL);
 	};
 
 	
@@ -132,7 +132,7 @@
         window.loadImage(channel5Id, url5);
         window.loadImage(channel6Id, url6);
 		
-		window.loadOVSAsSpecForDate(date);
+		window.loadOVSASpecForDate(date);
     };
 
     window.loadEovsaSPForDate = function (date) {
